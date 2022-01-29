@@ -40,5 +40,11 @@ class ImageVillage(models.Model):
     image = models.ImageField(upload_to='images/villages/')
     default = models.BooleanField(default=False)
 
+# item => pic , short discreption , images ,long description , title8
+# tre5 alsafawe => item
+# donationPage => text
+# visitPage => text
+# courses => item
+# docan => item
+# alm3rd => item
 
-# tre5 alsafawe => item => pic , short discreption , images ,long description , title8
