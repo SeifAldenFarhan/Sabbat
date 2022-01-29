@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from app.models import AboutUs
+from app.models import AboutUs, Donation
 
 
 # Create your views here.
@@ -10,7 +10,8 @@ def index(request):
 
 
 def donation(request):
-    return render(request, 'donation.html')
+    donation_info = Donation.objects.get(id=1)
+    return render(request, 'donation.html', {'donation_info': donation_info})
 
 
 def about_us(request):

@@ -40,6 +40,11 @@ class ImageVillage(models.Model):
     image = models.ImageField(upload_to='images/villages/')
     default = models.BooleanField(default=False)
 
+
+class Donation(SingletonModel):
+    text = models.TextField(verbose_name='النص')
+    bank_info = models.TextField(verbose_name='معلوامات البنك')
+
 # item => pic , short discreption , images ,long description , title8
 # tre5 alsafawe => item
 # donationPage => text
@@ -47,4 +52,3 @@ class ImageVillage(models.Model):
 # courses => item
 # docan => item
 # alm3rd => item
-
