@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from app.models import AboutUs
+
 
 # Create your views here.
 
@@ -12,7 +14,8 @@ def donation(request):
 
 
 def about_us(request):
-    return render(request, 'about_us.html')
+    about_us = AboutUs.objects.get(id=1)
+    return render(request, 'about_us.html', {'text': about_us.text})
 
 
 def visiting_times(request):

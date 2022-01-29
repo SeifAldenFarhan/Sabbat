@@ -10,5 +10,4 @@ urlpatterns = [
     path('aboutus', views.about_us, name='about_us'),
     path('visitingtimes', views.visiting_times, name='visiting_times'),
     path('membership', views.membership, name='membership'),
-
 ]

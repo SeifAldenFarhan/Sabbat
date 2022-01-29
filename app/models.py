@@ -8,7 +8,7 @@ class AboutUs(SingletonModel):
     text = models.TextField()
 
     def __str__(self):
-        return "About Us"
+        return self.text
 
 
 class City(models.Model):
@@ -28,6 +28,7 @@ class ImageCity(models.Model):
 class Village(models.Model):
     name = models.CharField(max_length=255, verbose_name='الأسم')
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='city', verbose_name='المدينة')
+    des = models.TextField()
 
     def __str__(self):
         return self.name
