@@ -1,38 +1,38 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
-    <!--<h2>الصفحة التبرع</h2>-->
-    <!--<p>-->
-    <!--    شكرا لسخائكم-->
-    <!--</p>-->
-    <section class="clean-block features">
-        <div class="container">
-            <div class="block-heading"><h2 class="text-info">التبرع</h2>
-                <p>
-                    {{ donation_info.text }}
+<!--<h2>الصفحة التبرع</h2>-->
+<!--<p>-->
+<!--    شكرا لسخائكم-->
+<!--</p>-->
+<section class="clean-block features">
+    <div class="container">
+        <div class="block-heading"><h2 class="text-info" style="margin-bottom: 50px;margin-top: 20px;">التبرع</h2>
+            <p style="margin-bottom: 60px;">
+                {{ donation_info.text }}
+            </p>
+        </div>
+        <div class="row justify-content-center"
+             style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
+            <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>بي بال</strong></h4>
+                <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">موقع ويب تجاري يسمح للمستخدم
+                    بتحويل المال عبر الإنترنت والبريد الإلكتروني لعناوين مختلفة. كما يمكن للمستخدم إرسال المال
+                    المرسل إليه إلى الآخرين أو تحويله لحساب في المصرف.</p></div>
+            <div class="col-md-5 feature-box"><i class="icon-bulb icon"></i><h4><strong>تحويله بنكية</strong></h4>
+                <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
+                    عن طريق تحويل بنكي
+                    <br>
+                    <pp dir="ltr">{{ donation_info.bank_info }}</pp>
                 </p>
             </div>
-            <div class="row justify-content-center"
-                 style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
-                <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>بي بال</strong></h4>
-                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">موقع ويب تجاري يسمح للمستخدم
-                        بتحويل المال عبر الإنترنت والبريد الإلكتروني لعناوين مختلفة. كما يمكن للمستخدم إرسال المال
-                        المرسل إليه إلى الآخرين أو تحويله لحساب في المصرف.</p></div>
-                <div class="col-md-5 feature-box"><i class="icon-bulb icon"></i><h4><strong>تحويله بنكية</strong></h4>
-                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
-                        عن طريق تحويل بنكي
-                        <br>
-                        <pp dir="ltr">{{ donation_info.bank_info }}</pp>
-                    </p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="icon-heart icon"></i><h4><strong>bit</strong></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p></div>
-                <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i><h4>All Browser Compatibility</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p></div>
-            </div>
+            <div class="col-md-5 feature-box"><i class="icon-heart icon"></i><h4><strong>bit</strong></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p></div>
+            <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i><h4>All Browser Compatibility</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
 {% endblock %}

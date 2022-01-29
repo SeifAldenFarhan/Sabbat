@@ -46,9 +46,8 @@ class Donation(SingletonModel):
     bank_info = models.TextField(verbose_name='معلوامات البنك')
 
 # item => pic , short discreption , images ,long description , title8
-# tre5 alsafawe => item
-# donationPage => text
+# tre5 alsafawe => text , items
 # visitPage => text
-# courses => item
-# docan => item
-# alm3rd => item
+# courses => text , items
+# docan => text , items
+# alm3rd => text , items

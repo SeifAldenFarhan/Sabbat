@@ -1,0 +1,39 @@
+----------------------------------------- FIRST STEP -------------------------------------------------
+
+
+contact_us :
+            connect the send button
+            give feedback about the design
+
+oralhistory + traning + gallery + market :
+            do a module that include text "simple description" about the traning page
+            do the item module
+            what to continue when click on the button on the item
+            give feedback about the design
+
+visitingtimes :
+             check if we need do the visiting time dynamic
+             give feedback about the design
+
+donation :
+            explain about the bit
+            a clicking on the ways to pay
+            give feedback about the design
+
+
+membership :
+            to check what these page , if we need to do it or do it active
+
+aboutus :
+            do module , it explained on module file
+            give feedback about the design
+
+Plog page ****** :
+            thinking about it
+
+the main Page ****** :
+                do design
+
+
+
+----------------------------------------- SECOND STEP -------------------------------------------------

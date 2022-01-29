@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
-
+<section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="block-heading"><h2 class="text-info" style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">اتصلوا بنا</h2>
+            <p>رقم المكتب:&nbsp;04.020955<br><br>رقم شخصي: 050.3069125<br><br>البريد الالكتروني<br>&nbsp;alsebat.2020@gmail.com<br><br>حساب
+                الفيسبوك<br><br>Alsebat Sebat<br><br>صفحات المتحف&nbsp;<br><br>متحف التراث الفلسطيني-
+                الناصرة&nbsp;<br>الارشيف الفلسطيني 1948&nbsp;<br></p></div>
+        <form>
+            <div class="text-end mb-3"><label class="form-label text-end" for="name">الاسم</label><input
+                    class="form-control" type="text" id="name" name="name"></div>
+            <div class="text-end mb-3"><label class="form-label" for="subject">الموضوع</label><input
+                    class="form-control" type="text" id="subject" name="subject"></div>
+            <div class="text-end mb-3"><label class="form-label" for="email">الأيميل</label><input
+                    class="form-control" type="email" id="email" name="email"></div>
+            <div class="text-end mb-3"><label class="form-label" for="message">الرسالة</label><textarea
+                    class="form-control" id="message" name="message"></textarea></div>
+            <div class="text-center mb-3">
+                <button class="btn btn-primary" type="submit">أرسال</button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock %}
