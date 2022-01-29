@@ -39,3 +39,6 @@ class ImageVillage(models.Model):
     village = models.ForeignKey(Village, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/villages/')
     default = models.BooleanField(default=False)
+
+
+# tre5 alsafawe => item => pic , short discreption , images ,long description , title8
