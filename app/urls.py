@@ -10,4 +10,13 @@ urlpatterns = [
     path('aboutus', views.about_us, name='about_us'),
     path('visitingtimes', views.visiting_times, name='visiting_times'),
     path('membership', views.membership, name='membership'),
+    path('market', views.market, name='market'),
+    path('gallery', views.gallery, name='gallery'),
+    path('oralhistory', views.oral_history, name='oral_history'),
+    path('training', views.training, name='training'),
+    path('contactus', views.contact_us, name='contact_us'),
+
+
+
+
 ]

@@ -24,3 +24,23 @@ def visiting_times(request):
 
 def membership(request):
     return render(request, 'membership.html')
+
+
+def market(request):
+    return render(request, 'market.html')
+
+
+def gallery(request):
+    return render(request, 'gallery.html')
+
+
+def oral_history(request):
+    return render(request, 'oral_history.html')
+
+
+def training(request):
+    return render(request, 'training.html')
+
+
+def contact_us(request):
+    return render(request, 'contact_us.html')
