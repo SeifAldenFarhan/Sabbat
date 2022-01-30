@@ -11,8 +11,7 @@ urlpatterns = [
     path('visitingtimes', views.visiting_times, name='visiting_times'),
     path('membership', views.membership, name='membership'),
     path('market', views.market, name='market'),
-    path('market/<str:title>', views.market_type, name='market_type'),
-
+    path('market/<str:type>', views.market_type, name='market_type'),
     path('gallery', views.gallery, name='gallery'),
     path('oralhistory', views.oral_history, name='oral_history'),
     path('training', views.training, name='training'),

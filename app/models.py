@@ -45,6 +45,59 @@ class Donation(SingletonModel):
     text = models.TextField(verbose_name='النص')
     bank_info = models.TextField(verbose_name='معلوامات البنك')
 
+
+class OralHistory(SingletonModel):
+    text = models.TextField(verbose_name='النص')
+
+
+class Embroidery(models.Model):
+    name = models.CharField(max_length=255, verbose_name='الاسم')
+    image = models.ImageField(upload_to='images/embroideries/', verbose_name='الصورة')
+    description = models.TextField(verbose_name='النص')
+    price = models.PositiveIntegerField(verbose_name='السعر')
+
+    def __str__(self):
+        return self.name
+
+
+class Book(models.Model):
+    name = models.CharField(max_length=255, verbose_name='الاسم')
+    image = models.ImageField(upload_to='images/book/', verbose_name='الصورة')
+    description = models.TextField(verbose_name='النص')
+    price = models.PositiveIntegerField(verbose_name='السعر')
+
+    def __str__(self):
+        return self.name
+
+
+class Herb(models.Model):
+    name = models.CharField(max_length=255, verbose_name='الاسم')
+    image = models.ImageField(upload_to='images/herb/', verbose_name='الصورة')
+    description = models.TextField(verbose_name='النص')
+    price = models.PositiveIntegerField(verbose_name='السعر')
+
+    def __str__(self):
+        return self.name
+
+
+class Olive(models.Model):
+    name = models.CharField(max_length=255, verbose_name='الاسم')
+    image = models.ImageField(upload_to='images/olive/', verbose_name='الصورة')
+    description = models.TextField(verbose_name='النص')
+    price = models.PositiveIntegerField(verbose_name='السعر')
+
+    def __str__(self):
+        return self.name
+
+
+class Accessories(models.Model):
+    name = models.CharField(max_length=255, verbose_name='الاسم')
+    image = models.ImageField(upload_to='images/accessories/', verbose_name='الصورة')
+    description = models.TextField(verbose_name='النص')
+    price = models.PositiveIntegerField(verbose_name='السعر')
+
+    def __str__(self):
+        return self.name
 # item => pic , short discreption , images ,long description , title8
 # tre5 alsafawe => text , items
 # visitPage => text

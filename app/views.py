@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from app.models import AboutUs, Donation
+from django.apps import apps
 
 
 # Create your views here.
@@ -31,9 +32,14 @@ def market(request):
     return render(request, 'market.html')
 
 
-def market_type(request, title):
-
-    return render(request, 'market_type.html', {'title': title})
+def market_type(request, type):
+    market_list = ["Embroidery", "Accessories", "Book", "Herb", "Olive"]
+    if type in market_list:
+        Model = apps.get_model('app', type)
+        objects = Model.objects.all()
+        print(objects)
+        return render(request, 'market_type.html', {'title': type})
+    return render(request, 'market.html')
 
 
 def gallery(request):
