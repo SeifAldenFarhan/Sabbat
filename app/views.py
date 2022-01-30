@@ -31,6 +31,11 @@ def market(request):
     return render(request, 'market.html')
 
 
+def market_type(request, title):
+
+    return render(request, 'market_type.html', {'title': title})
+
+
 def gallery(request):
     return render(request, 'gallery.html')
 

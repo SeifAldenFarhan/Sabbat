@@ -35,5 +35,13 @@ the main Page ****** :
                 do design
 
 
+db:
+    gallery:
+        title
+        photo
+        desc
+        date
+
+
 
 ----------------------------------------- SECOND STEP -------------------------------------------------
