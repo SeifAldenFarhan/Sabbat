@@ -1,7 +1,7 @@
+from django.apps import apps
 from django.shortcuts import render
 
-from app.models import AboutUs, Donation
-from django.apps import apps
+from app.models import AboutUs, Donation, City
 
 
 # Create your views here.
@@ -56,3 +56,12 @@ def training(request):
 
 def contact_us(request):
     return render(request, 'contact_us.html')
+
+
+def city(request, city):
+    city = City.objects.get(name=city)
+    return render(request, 'city.html', {'city': city})
+
+
+def village(request, city, village):
+    return render(request, 'village.html')

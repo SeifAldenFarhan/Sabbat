@@ -31,7 +31,7 @@ class Village(models.Model):
     des = models.TextField()
 
     def __str__(self):
-        return self.name
+        return "{} -> {}".format(self.city.name, self.name)
 
 
 class ImageVillage(models.Model):

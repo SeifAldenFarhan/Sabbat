@@ -6,6 +6,9 @@ app_name = 'app'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('city/<str:city>', views.city, name='city'),
+    path('city/<str:city>/<str:village>', views.village, name='village'),
+
     path('donation', views.donation, name='donation'),
     path('aboutus', views.about_us, name='about_us'),
     path('visitingtimes', views.visiting_times, name='visiting_times'),
@@ -16,8 +19,4 @@ urlpatterns = [
     path('oralhistory', views.oral_history, name='oral_history'),
     path('training', views.training, name='training'),
     path('contactus', views.contact_us, name='contact_us'),
-
-
-
-
 ]

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    {{ city.name }}
+
+    {% for v in city.city.all %}
+        <div>
+            <a href="{% url 'app:village' city=city.name village=v.name %}">{{ v.name }}</a>
+        {{ v.des }}
+        </div>
+    {% endfor %}
+{% endblock %}
