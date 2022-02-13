@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,7 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/user_login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+PAYPAL_RECEIVER_EMAIL = 'seifaldenfarhan@gmail.com'
+
+PAYPAL_TEST = True

@@ -1,38 +1,48 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
-<!--<h2>الصفحة التبرع</h2>-->
-<!--<p>-->
-<!--    شكرا لسخائكم-->
-<!--</p>-->
-<section class="clean-block features">
-    <div class="container">
-        <div class="block-heading"><h2 class="text-info" style="margin-bottom: 50px;margin-top: 20px;">التبرع</h2>
-            <p style="margin-bottom: 60px;">
-                {{ donation_info.text }}
-            </p>
-        </div>
-        <div class="row justify-content-center"
-             style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
-            <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>بي بال</strong></h4>
-                <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">موقع ويب تجاري يسمح للمستخدم
-                    بتحويل المال عبر الإنترنت والبريد الإلكتروني لعناوين مختلفة. كما يمكن للمستخدم إرسال المال
-                    المرسل إليه إلى الآخرين أو تحويله لحساب في المصرف.</p></div>
-            <div class="col-md-5 feature-box"><i class="icon-bulb icon"></i><h4><strong>تحويله بنكية</strong></h4>
-                <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
-                    عن طريق تحويل بنكي
-                    <br>
-                    <pp dir="ltr">{{ donation_info.bank_info }}</pp>
+    <!--<h2>الصفحة التبرع</h2>-->
+    <!--<p>-->
+    <!--    شكرا لسخائكم-->
+    <!--</p>-->
+    <section class="clean-block features">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info" style="margin-bottom: 50px;margin-top: 20px;">التبرع</h2>
+                <p style="margin-bottom: 60px;">
+                    {{ donation_info.text }}
                 </p>
             </div>
-            <div class="col-md-5 feature-box"><i class="icon-heart icon"></i><h4><strong>bit</strong></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                    mattis vitae leo.</p></div>
-            <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i><h4>All Browser Compatibility</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                    mattis vitae leo.</p></div>
+            <div class="row justify-content-center"
+                 style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
+                <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>بي بال/ credit
+                    card</strong></h4>
+                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">موقع ويب تجاري يسمح للمستخدم
+                        بتحويل المال عبر الإنترنت والبريد الإلكتروني لعناوين مختلفة. كما يمكن للمستخدم إرسال المال
+                        المرسل إليه إلى الآخرين أو تحويله لحساب في المصرف.</p>
+                    <form method="post">
+                        <div class="text-end mb-3">
+                            {% csrf_token %}
+                            <label class="form-label" for="id_amount">المبلغ</label>
+                            <input class="form-control" id="id_amount" name="amount" required>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary">تبرع</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="col-md-5 feature-box"><i class="icon-bulb icon"></i><h4><strong>تحويله بنكية</strong></h4>
+                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: rtl;">
+                        عن طريق تحويل بنكي
+                        <br>
+                        <pp dir="ltr">{{ donation_info.bank_info }}</pp>
+                    </p>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 {% endblock %}

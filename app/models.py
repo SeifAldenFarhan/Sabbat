@@ -3,6 +3,19 @@ from solo.models import SingletonModel
 
 
 # Create your models here.
+class Gallery(models.Model):
+    title = models.CharField(max_length=255, verbose_name='العنوان')
+    date = models.DateField(verbose_name='التاريخ')
+    desc = models.TextField(verbose_name='النص')
+    image = models.ImageField(upload_to='images/gallery/')
+
+
+class Training(models.Model):
+    title = models.CharField(max_length=255, verbose_name='العنوان')
+    date = models.DateField(verbose_name='التاريخ')
+    desc = models.TextField(verbose_name='النص')
+    image = models.ImageField(upload_to='images/training/')
+
 
 class AboutUs(SingletonModel):
     text = models.TextField()
@@ -98,6 +111,25 @@ class Accessories(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email
+
+
+class DonationInfo(models.Model):
+    d_id = models.AutoField(primary_key=True)
+    amount = models.PositiveIntegerField(verbose_name="المبلغ")
+    date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "{} {}".format(self.d_id, self.amount)
+
 # item => pic , short discreption , images ,long description , title8
 # tre5 alsafawe => text , items
 # visitPage => text
