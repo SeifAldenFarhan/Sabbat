@@ -1,3 +1,4 @@
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from solo.models import SingletonModel
 
@@ -31,11 +32,46 @@ class City(models.Model):
         return self.name
 
 
-class ImageCity(models.Model):
-    name = models.CharField(max_length=255)
+class PanoramicPhotoCity(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/cities/')
-    default = models.BooleanField(default=False)
+    picture = models.ImageField(upload_to='./images/city/PanoramicPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class AerialPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/AerialPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class ActionsPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/ActionsPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class EventsPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/EventsPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class InstitutionPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/InstitutionPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class CharactersPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/CharactersPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class MiscellaneousPhotoCity(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/city/MiscellaneousPhotoCity')
+    caption = models.CharField(max_length=255)
 
 
 class Village(models.Model):
@@ -47,11 +83,46 @@ class Village(models.Model):
         return "{} -> {}".format(self.city.name, self.name)
 
 
-class ImageVillage(models.Model):
-    name = models.CharField(max_length=255)
+class PanoramicPhotoVillage(models.Model):
     village = models.ForeignKey(Village, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/villages/')
-    default = models.BooleanField(default=False)
+    picture = models.ImageField(upload_to='./images/village/PanoramicPhotoCity')
+    caption = models.CharField(max_length=255)
+
+
+class AerialPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/AerialPhotoVillage')
+    caption = models.CharField(max_length=255)
+
+
+class ActionsPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/ActionsPhotoVillage')
+    caption = models.CharField(max_length=255)
+
+
+class EventsPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/EventsPhotoVillage')
+    caption = models.CharField(max_length=255)
+
+
+class InstitutionPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/InstitutionPhotoVillage')
+    caption = models.CharField(max_length=255)
+
+
+class CharactersPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/CharactersPhotoVillage')
+    caption = models.CharField(max_length=255)
+
+
+class MiscellaneousPhotoVillage(models.Model):
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/village/MiscellaneousPhotoVillage')
+    caption = models.CharField(max_length=255)
 
 
 class Donation(SingletonModel):
