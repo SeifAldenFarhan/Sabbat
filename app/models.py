@@ -33,7 +33,7 @@ class City(models.Model):
 
 
 class PanoramicPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='PanoramicPhotoCity')
     picture = models.ImageField(upload_to='./images/city/PanoramicPhotoCity')
     caption = models.CharField(max_length=255)
 
