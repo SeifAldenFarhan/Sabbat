@@ -31,8 +31,10 @@
                 <div class="row">
                     {% for p in city.PanoramicPhotoCity.all %}
                         <div class="col-md-6 col-lg-4 item">
-                        <p>{{ p.caption }}</p>
-                            <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="">
+                                <p>{{ p.caption }}</p>
+                            </a>
                         </div>
                         <br>
                     {% endfor %}
