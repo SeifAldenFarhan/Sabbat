@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
+{{ Village }}
 <section class="clean-block clean-services dark">
     <div class="container">
         <div class="block-heading"><h2 class="text-info">{{ village.name }}</h2>
@@ -30,44 +31,19 @@
         <section class="clean-block clean-gallery dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 item">
-                        <a class="lightbox" href="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41">
-                            <img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image4.jpg?h=ae7b4d25adfdfa1581297908235a949d"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image4.jpg?h=ae7b4d25adfdfa1581297908235a949d"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image4.jpg?h=ae7b4d25adfdfa1581297908235a949d"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image4.jpg?h=ae7b4d25adfdfa1581297908235a949d"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox"
-                                                           href="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41"><img
-                            class="img-thumbnail img-fluid image"
-                            src="/assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41"></a></div>
+                {% for p in village.PanoramicPhotoVillage.all %}
+                <div class="col-md-6 col-lg-4 item">
+                    <a class="lightbox" href="{{ p.picture.url }}">
+                        <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                        <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                    </a>
                 </div>
+                <br>
+                {% endfor %}
+            </div>
             </div>
         </section>
     </div>
