@@ -7,7 +7,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 
 from Sabat import settings
 from app.forms import ContactForm, DonationForm
-from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo
+from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo, MuseumPhoto
 
 
 # Create your views here.
@@ -44,7 +44,8 @@ def market_type(request, type):
 
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    objs = Gallery.objects.all()
+    return render(request, 'gallery.html', {'gallery': objs})
 
 
 def oral_history(request):
@@ -52,7 +53,8 @@ def oral_history(request):
 
 
 def training(request):
-    return render(request, 'training.html')
+    objs = Training.objects.all()
+    return render(request, 'training.html', {'training': objs})
 
 
 def contact_us(request):
@@ -130,3 +132,8 @@ def process_payment(request, amount, d_id):
     }
     form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'process_payment.html', {'form': form})
+
+
+def museum(request):
+    objs = MuseumPhoto.objects.all()
+    return render(request, 'museum.html', {'photos': objs})

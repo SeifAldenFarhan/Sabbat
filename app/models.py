@@ -201,6 +201,11 @@ class DonationInfo(models.Model):
     def __str__(self):
         return "{} {}".format(self.d_id, self.amount)
 
+
+class MuseumPhoto(models.Model):
+    image = models.ImageField(upload_to='./images/Museum')
+    caption = models.CharField(max_length=255)
+
 # item => pic , short discreption , images ,long description , title8
 # tre5 alsafawe => text , items
 # visitPage => text

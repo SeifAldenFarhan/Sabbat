@@ -13,6 +13,7 @@ urlpatterns = [
     path('aboutus', views.about_us, name='about_us'),
     path('visitingtimes', views.visiting_times, name='visiting_times'),
     path('membership', views.membership, name='membership'),
+    path('museum', views.museum, name='museum'),
     path('market', views.market, name='market'),
     path('market/<str:type>', views.market_type, name='market_type'),
     path('gallery', views.gallery, name='gallery'),

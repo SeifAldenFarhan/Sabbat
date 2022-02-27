@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+    <section class="clean-block clean-pricing dark">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info"
+                                           style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">
+                المتحف</h2>
+                <p>شرح مبسط</p></div>
+        </div>
+
+        {% for p in photos %}
+            {{ p.caption }}
+
+        {% endfor %}
+    </section>
+{% endblock %}
