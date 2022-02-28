@@ -13,7 +13,8 @@ from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo,
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    cities = City.objects.all()
+    return render(request, 'index.html', {"cities": cities})
 
 
 def about_us(request):
@@ -39,7 +40,7 @@ def market_type(request, type):
         Model = apps.get_model('app', type)
         objects = Model.objects.all()
         print(objects)
-        return render(request, 'market_type.html', {'title': type})
+        return render(request, 'market_type.html', {'title': type, 'objects': objects})
     return render(request, 'market.html')
 
 
