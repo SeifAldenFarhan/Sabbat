@@ -39,37 +39,37 @@ class PanoramicPhotoCity(models.Model):
 
 
 class AerialPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="AerialPhotoCity")
     picture = models.ImageField(upload_to='images/city/AerialPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class ActionsPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="ActionsPhotoCity")
     picture = models.ImageField(upload_to='images/city/ActionsPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class EventsPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="EventsPhotoCity")
     picture = models.ImageField(upload_to='images/city/EventsPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class InstitutionPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="InstitutionPhotoCity")
     picture = models.ImageField(upload_to='images/city/InstitutionPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class CharactersPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="CharactersPhotoCity")
     picture = models.ImageField(upload_to='images/city/CharactersPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class MiscellaneousPhotoCity(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="MiscellaneousPhotoCity")
     picture = models.ImageField(upload_to='images/city/MiscellaneousPhotoCity')
     caption = models.CharField(max_length=255)
 
@@ -84,43 +84,43 @@ class Village(models.Model):
 
 
 class PanoramicPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="PanoramicPhotoVillage")
     picture = models.ImageField(upload_to='./images/village/PanoramicPhotoCity')
     caption = models.CharField(max_length=255)
 
 
 class AerialPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="AerialPhotoVillage")
     picture = models.ImageField(upload_to='images/village/AerialPhotoVillage')
     caption = models.CharField(max_length=255)
 
 
 class ActionsPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="ActionsPhotoVillage")
     picture = models.ImageField(upload_to='images/village/ActionsPhotoVillage')
     caption = models.CharField(max_length=255)
 
 
 class EventsPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="EventsPhotoVillage")
     picture = models.ImageField(upload_to='images/village/EventsPhotoVillage')
     caption = models.CharField(max_length=255)
 
 
 class InstitutionPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="InstitutionPhotoVillage")
     picture = models.ImageField(upload_to='images/village/InstitutionPhotoVillage')
     caption = models.CharField(max_length=255)
 
 
 class CharactersPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="CharactersPhotoVillage")
     picture = models.ImageField(upload_to='images/village/CharactersPhotoVillage')
     caption = models.CharField(max_length=255)
 
 
 class MiscellaneousPhotoVillage(models.Model):
-    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE, related_name="MiscellaneousPhotoVillage")
     picture = models.ImageField(upload_to='images/village/MiscellaneousPhotoVillage')
     caption = models.CharField(max_length=255)
 

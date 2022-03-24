@@ -7,7 +7,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 
 from Sabat import settings
 from app.forms import ContactForm, DonationForm
-from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo, MuseumPhoto
+from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo, MuseumPhoto, Village
 
 
 # Create your views here.
@@ -75,7 +75,8 @@ def city(request, city):
 
 
 def village(request, city, village):
-    return render(request, 'village.html')
+    village = Village.objects.get(city__name=city, name=village)
+    return render(request, 'village.html', {'village': village})
 
 
 def gallery_blog(request, id):
