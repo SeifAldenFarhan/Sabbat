@@ -1,5 +1,8 @@
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 
+from Sabat import settings
 from app import views
 
 app_name = 'app'
@@ -26,3 +29,7 @@ urlpatterns = [
     path('payment-done', views.payment_done, name='payment_done'),
     path('payment-cancelled', views.payment_canceled, name='payment_cancelled'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_DIR)
