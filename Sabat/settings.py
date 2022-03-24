@@ -56,6 +56,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = ["http://alsebat.pythonanywhere.com/"]
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Sabat.urls'
