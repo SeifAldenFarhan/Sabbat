@@ -30,6 +30,7 @@
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+        <img style="height: 50px ; width: 100px" src="{% static 'assets/img/logoBlack.png' %}" alt="Girl in a jacket">
         <a class="navbar-brand" href="{% url 'app:index' %}">جمعية السباط</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,38 +39,38 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:about_us' %}">من نحن</a>
+                    <button  class="navbar-btn btn" ><a class="font-weight-bold nav-link" href="{% url 'app:about_us' %}"><p class="fw-bold">من نحن</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:membership' %}">سجل العضوية</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:membership' %}"><p class="fw-bold">سجل العضوية</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:donation' %}">تبرع</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:visiting_times' %}">أوقات الزيارة</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:donation' %}"><p class="fw-bold">تبرع</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:museum' %}">المتحف</a>
+                   <button  class="navbar-btn btn" > <a class="nav-link" href="{% url 'app:visiting_times' %}"><p class="fw-bold">أوقات الزيارة</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:market' %}">دكان</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:museum' %}"><p class="fw-bold">المتحف</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:gallery' %}">معارض Gallery</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:market' %}"><p class="fw-bold">دكان</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:gallery' %}"><p class="fw-bold"> معارض Gallery</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:oral_history' %}">التاريخ الشفوي</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:oral_history' %}"><p class="fw-bold">التاريخ الشفوي</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:training' %}">دورات</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:training' %}"><p class="fw-bold">دورات</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:contact_us' %}">اتصلوا بنا</a>
+                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:contact_us' %}"><p class="fw-bold"> اتصلوا بنا</p></a></button>
                 </li>
 
 
@@ -130,6 +131,8 @@
     html, body {
         height: 100%;
     }
+
+
 
 </style>
 
