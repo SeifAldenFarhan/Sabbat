@@ -31,7 +31,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div style="background-color: black;" class="container-fluid">
         <a class="navbar-brand" href="{% url 'app:index' %}">
-            <img style="height: 50px ; width: 60px" src="{% static 'assets/img/logoBlack.png' %}" alt="logo" >
+            <img style="height: 50px ; width: 60px" src="{% static 'assets/img/logowhite.png' %}" alt="logo" >
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,6 +131,10 @@
 <style>
     html, body {
         height: 100%;
+    }
+
+    .navbar-toggler-icon {
+        background-color: white;
     }
 
 
