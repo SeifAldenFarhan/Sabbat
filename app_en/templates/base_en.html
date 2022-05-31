@@ -29,9 +29,9 @@
 <body>
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div style="background-color: black;" class="container-fluid">
+    <div class="container-fluid" style="background-color: black; padding: 0;width: fit-content">
         <a class="navbar-brand" href="{% url 'app_en:index_en' %}">
-            <img style="height: 150px ; width: 300px" src="{% static 'assets/img/newwhitelogo.png' %}" alt="logo">
+            <img style="height: 120px ; width: 200px" src="{% static 'assets/img/newwhitelogo.png' %}" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,53 +40,58 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="font-weight-bold nav-link" href="{% url 'app_en:about_us_en' %}">
-                        <p class="fw-bold">About Us</p></a></button>
+                    <a class="font-weight-bold nav-link"
+                       href="{% url 'app_en:about_us_en' %}">
+                        <p class="fw-bold">About Us</p></a>
                 </li>
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:membership_en' %}"><p
-                            class="fw-bold">Membership</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:membership_en' %}"><p
+                            class="fw-bold">Membership</p></a>
                 </li>
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:donation_en' %}"><p
-                            class="fw-bold">Donate</p></a></button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:visiting_times_en' %}"><p
-                            class="fw-bold">Visiting Times</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:donation_en' %}"><p
+                            class="fw-bold">Donate</p></a>
                 </li>
 
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:museum_en' %}"><p class="fw-bold">
-                        The Museum</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:visiting_times_en' %}"><p
+                            class="fw-bold">Visiting Times</p></a>
                 </li>
 
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:market_en' %}"><p class="fw-bold">
-                        Store</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:museum_en' %}"><p
+                            class="fw-bold">
+                        The Museum</p></a>
                 </li>
 
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:gallery_en' %}"><p
-                            class="fw-bold">Gallery</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:oral_history_en' %}"><p
-                            class="fw-bold">Oral History</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:training_en' %}"><p
-                            class="fw-bold">Training</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:contact_us_en' %}"><p
-                            class="fw-bold">Contact Us</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:market_en' %}"><p
+                            class="fw-bold">
+                        Store</p></a>
                 </li>
 
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app:index' %}"><p
-                            class="fw-bold">العربية</p></a></button>
+                    <a class="nav-link" href="{% url 'app_en:gallery_en' %}"><p
+                            class="fw-bold">Gallery</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app_en:oral_history_en' %}"><p
+                            class="fw-bold">Oral History</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app_en:training_en' %}"><p
+                            class="fw-bold">Training</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app_en:contact_us_en' %}"><p
+                            class="fw-bold">Contact Us</p></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:index' %}">
+                        <p class="fw-bold">العربية
+                        </p>
+                    </a>
                 </li>
 
             </ul>
@@ -150,7 +155,20 @@
     .navbar-toggler-icon {
         background-color: white;
     }
+    nav {
+        text-align: center;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+    }
 
+
+    nav li:hover {
+        {#border-top: 4px solid white;#}
+        {#border-bottom: 4px solid white;#}
+        background-color: #0a53be;
+        padding: 0;
+    }
 
 </style>
 
