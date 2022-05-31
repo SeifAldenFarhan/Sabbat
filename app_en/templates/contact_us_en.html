@@ -1,0 +1,72 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info"
+                                           style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">
+                Contact us
+            </h2>
+                <p>Office phone:&nbsp;04.020955<br><br>Personal phone: 050.3069125<br><br>Email<br>&nbsp;alsebat.2020@gmail.com<br><br>Facebook<br><br>Alsebat
+                    Sebat<br><br>Museum Pages&nbsp;<br><br>متحف التراث الفلسطيني-
+                    الناصرة&nbsp;<br>الارشيف الفلسطيني 1948&nbsp;<br></p></div>
+            <form action="" method="post">
+
+                <div class="text mb-3">
+                    {% csrf_token %}
+                    <label class="form-label" for="id_subject">Subject</label>
+                    <input class="form-control" type="text" id="id_subject" name="subject">
+                </div>
+                <div class="text mb-3">
+                    {% csrf_token %}
+                    <label class="form-label" for="id_email">Email</label>
+                    <input class="form-control" type="email" id="id_email" name="email">
+                </div>
+                <div class="text mb-3">
+                    {% csrf_token %}
+                    <label class="form-label" for="id_message">Message</label>
+                    <textarea class="form-control" id="id_message" name="message"></textarea>
+                </div>
+                <div class="text-center mb-3">
+                    <input class="btn btn-primary" type="submit">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        <!--
+        .feature-box > p {
+        --> <!-- font-family: 'Shilia W23';
+        --> <!-- font-size: 1.1 em;
+        --> <!-- font-weight: 15;
+        --> <!-- line-height: 1.1 em;
+        --> <!-- color: black;
+        --> <!--
+        }
+
+        -->
+
+        .block-heading > p {
+
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
+
+        <!--
+        .form-label {
+        --> <!-- color: white;
+        --> <!--
+        }
+
+        -->
+        <!--
+        .form-check-label {
+        --> <!-- color: white;
+        -->
+        }
+    </style>
+{% endblock %}

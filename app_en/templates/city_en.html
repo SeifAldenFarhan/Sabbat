@@ -1,0 +1,238 @@
+{% extends 'base_en.html' %}
+{#{% load static %}#}
+{% block body_block %}
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <main class="page service-page">
+        <section class="clean-block clean-services dark">
+            <div class="container">
+                <div class="block-heading"><h2 class="text-info">{{ city.name_en }}</h2>
+                    <div class="btn-group" role="group"><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="panoramic">صور بانورامية
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Aerial">صور جوية
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Actions">صور احداث
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Events">صور مناسبات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Institution">صور مؤسسات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Characters">صور شخصيات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 115.234px;margin: 3px;" id="Miscellaneous">متفرقات
+                        </button><!-- End: Basic Modal Button --></div>
+                </div>
+
+                <div class="row" id="PanoramicPhotoCity" style="display: none">
+                    {% for p in city.PanoramicPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="AerialPhotoCity" style="display: none">
+                    {% for p in city.AerialPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="ActionsPhotoCity" style="display: none">
+                    {% for p in city.ActionsPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="EventsPhotoCity" style="display: none">
+                    {% for p in city.EventsPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="InstitutionPhotoCity" style="display: none">
+                    {% for p in city.InstitutionPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="CharactersPhotoCity" style="display: none">
+                    {% for p in city.CharactersPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+
+                <div class="row" id="MiscellaneousPhotoCity" style="display: none">
+                    {% for p in city.MiscellaneousPhotoCity.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+            </div><!-- Start: --mp-- Multiple items slider responsive -->
+
+            <hr>
+            <div style="margin-top: 20px;">
+                <div class="d-flex flex-row multiple-item-slider">
+                    <div class="row">
+                        {% for v in city.city.all %}
+                            <div class="justify-content-center spacer-slider col-md-6 col-lg-2">
+                                <figure class="figure" style="
+                            height: 100%;
+                        "><img class="img-fluid figure-img"
+                               src="https://c4.wallpaperflare.com/wallpaper/423/85/112/leather-texture-textured-wallpaper-preview.jpg"
+                               alt="alt text here" style="
+                                    height: 97%;
+                                ">
+                                    <figcaption class="figure-caption">{{ v.name }}</figcaption>
+                                    <a href="{% url 'app:village' city=city.name village=v.name %}"
+                                       class="stretched-link"></a>
+                                </figure>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div><!-- End: --mp-- Multiple items slider responsive --></section>
+    </main><!-- Start: Footer Dark -->
+
+    <script>
+
+        $("#panoramic").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'flex';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+
+        $("#Aerial").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'flex';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+        $("#Actions").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'flex';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+        $("#Events").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'flex';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+
+        $("#Institution").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'flex';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+        $("#Characters").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'flex';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'none';
+        });
+        $("#Miscellaneous").live("click", function () {
+            document.getElementById('PanoramicPhotoCity').style.display = 'none';
+            document.getElementById('AerialPhotoCity').style.display = 'none';
+            document.getElementById('ActionsPhotoCity').style.display = 'none';
+            document.getElementById('EventsPhotoCity').style.display = 'none';
+            document.getElementById('InstitutionPhotoCity').style.display = 'none';
+            document.getElementById('CharactersPhotoCity').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoCity').style.display = 'flex';
+        });
+
+
+    </script>
+{% endblock %}

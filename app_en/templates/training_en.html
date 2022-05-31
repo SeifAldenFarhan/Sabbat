@@ -1,0 +1,50 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+
+    <section class="clean-block clean-services dark">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info"
+                                           style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">
+                Training</h2>
+{#                <p style="margin-bottom: 50px;">شرح بسيط مقدمه ..</p>#}
+            </div>
+            <div class="row">
+                {% for t in training %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card" style="height: 500px;"><img class="card-img-top w-100 d-block"
+                                                                      src="{{ t.image.url }}" width="220px"
+                                                                      height="300px">
+                            <div class="card-body"><h4 class="card-title"><strong>
+                                &nbsp;
+                                {{ t.title }}
+                                &nbsp;
+                            </strong></h4>
+                                <p class="card-text">{{ t.desc }}</p></div>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm" type="button">
+                                    <a href="{% url 'app:training_blog' t.pk %}">المزيد</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+    <style>
+
+        .block-heading > p {
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
+
+
+    </style>
+{% endblock %}

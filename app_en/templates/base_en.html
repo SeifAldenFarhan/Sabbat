@@ -1,0 +1,157 @@
+{% load static %}
+{#{% load static %}#}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sabbat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div style="background-color: black;" class="container-fluid">
+        <a class="navbar-brand" href="{% url 'app_en:index_en' %}">
+            <img style="height: 150px ; width: 300px" src="{% static 'assets/img/newwhitelogo.png' %}" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="font-weight-bold nav-link" href="{% url 'app_en:about_us_en' %}">
+                        <p class="fw-bold">About Us</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:membership_en' %}"><p
+                            class="fw-bold">Membership</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:donation_en' %}"><p
+                            class="fw-bold">Donate</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:visiting_times_en' %}"><p
+                            class="fw-bold">Visiting Times</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:museum_en' %}"><p class="fw-bold">
+                        The Museum</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:market_en' %}"><p class="fw-bold">
+                        Store</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:gallery_en' %}"><p
+                            class="fw-bold">Gallery</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:oral_history_en' %}"><p
+                            class="fw-bold">Oral History</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:training_en' %}"><p
+                            class="fw-bold">Training</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:contact_us_en' %}"><p
+                            class="fw-bold">Contact Us</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app:index' %}"><p
+                            class="fw-bold">العربية</p></a></button>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container"
+     style="margin-top: 1px;text-align: left;direction:ltr">
+
+    {% block body_block %}
+
+    {% endblock %}
+</div>
+<!-- Footer-->
+<footer class="bg-light text-center text-white">
+    <!-- Grid container -->
+    <!--    <div class="container p-4 pb-0">-->
+    <!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
+    <!--        <section class="mb-4">-->
+    <!--            &lt;!&ndash; Facebook &ndash;&gt;-->
+    <!--            <a-->
+    <!--                    class="btn btn-primary btn-floating m-1"-->
+    <!--                    style="background-color: #3b5998;"-->
+    <!--                    href="#"-->
+    <!--                    role="button"-->
+    <!--            ><i class="fab fa-facebook-f"></i-->
+    <!--            ></a>-->
+
+
+    <!--            &lt;!&ndash; Instagram &ndash;&gt;-->
+    <!--            <a-->
+    <!--                    class="btn btn-primary btn-floating m-1"-->
+    <!--                    style="background-color: #ac2bac;"-->
+    <!--                    href="#"-->
+    <!--                    role="button"-->
+    <!--            ><i class="fab fa-instagram"></i-->
+    <!--            ></a>-->
+    <!--        </section>-->
+    <!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
+    <!--    </div>-->
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #212529">
+        © 2022 Copyright:
+        <a>Seif Farhan</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    .navbar-toggler-icon {
+        background-color: white;
+    }
+
+
+</style>
+
+</html>
