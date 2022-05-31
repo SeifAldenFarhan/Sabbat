@@ -27,6 +27,7 @@ class AboutUs(SingletonModel):
 
 class City(models.Model):
     name = models.CharField(max_length=255, verbose_name='الأسم')
+    name_en = models.CharField(max_length=255, verbose_name='الأسم انجليزي')
 
     def __str__(self):
         return self.name

@@ -1,0 +1,55 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+    <section class="clean-block clean-blog-list dark">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info"
+                                           style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">
+                gallery</h2>
+{#                <p style="margin-bottom: 50px;">هنا يتم عرض كل النشاطات&nbsp;</p>#}
+            </div>
+            <div class="block-content">
+
+                {% for g in gallery %}
+                    <div class="clean-blog-post">
+                        <div class="row">
+                            <div class="col-lg-5"><img class="rounded img-fluid"
+                                                       src="{{ g.image.url }}" alt="">
+                            </div>
+                            <div class="col-lg-7"><h3>{{ g.title }}</h3>
+                                <div class="info"><span class="text-muted">{{ g.date | date }}</span></div>
+                                <p class="text">
+                                    {{ g.desc }}
+                                </p>
+                                <a class="btn btn-outline-primary btn-sm" role="button"
+                                   href="{% url 'app:gallery_blog' g.pk %}">المزيد </a></div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .text {
+            display: block;
+            width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+
+        .block-heading > p {
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
+
+
+    </style>
+{% endblock %}

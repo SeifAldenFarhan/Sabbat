@@ -1,10 +1,10 @@
 {% load static %}
 {#{% load static %}#}
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html dir="ltr" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>جمعية السباط</title>
+    <title>Sabbat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome icons (free version)-->
@@ -30,8 +30,8 @@
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div style="background-color: black;" class="container-fluid">
-        <a class="navbar-brand" href="{% url 'app:index' %}">
-            <img style="height: 150px ; width: 300px" src="{% static 'assets/img/newwhitelogo.png' %}" alt="logo" >
+        <a class="navbar-brand" href="{% url 'app_en:index_en' %}">
+            <img style="height: 150px ; width: 300px" src="{% static 'assets/img/newwhitelogo.png' %}" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,43 +40,53 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="font-weight-bold nav-link" href="{% url 'app:about_us' %}"><p class="fw-bold">من نحن</p></a></button>
+                    <button class="navbar-btn btn"><a class="font-weight-bold nav-link" href="{% url 'app_en:about_us_en' %}">
+                        <p class="fw-bold">About Us</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:membership' %}"><p class="fw-bold">سجل العضوية</p></a></button>
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:membership_en' %}"><p
+                            class="fw-bold">Membership</p></a></button>
                 </li>
                 <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:donation' %}"><p class="fw-bold">تبرع</p></a></button>
-                </li>
-
-                <li class="nav-item">
-                   <button  class="navbar-btn btn" > <a class="nav-link" href="{% url 'app:visiting_times' %}"><p class="fw-bold">أوقات الزيارة</p></a></button>
-                </li>
-
-                <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:museum' %}"><p class="fw-bold">المتحف</p></a></button>
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:donation_en' %}"><p
+                            class="fw-bold">Donate</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:market' %}"><p class="fw-bold">دكان</p></a></button>
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:visiting_times_en' %}"><p
+                            class="fw-bold">Visiting Times</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:gallery' %}"><p class="fw-bold"> معارض Gallery</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:oral_history' %}"><p class="fw-bold">التاريخ الشفوي</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:training' %}"><p class="fw-bold">دورات</p></a></button>
-                </li>
-                <li class="nav-item">
-                    <button  class="navbar-btn btn" ><a class="nav-link" href="{% url 'app:contact_us' %}"><p class="fw-bold"> اتصلوا بنا</p></a></button>
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:museum_en' %}"><p class="fw-bold">
+                        The Museum</p></a></button>
                 </li>
 
                 <li class="nav-item">
-                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:index_en' %}"><p
-                            class="fw-bold">English</p></a></button>
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:market_en' %}"><p class="fw-bold">
+                        Store</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:gallery_en' %}"><p
+                            class="fw-bold">Gallery</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:oral_history_en' %}"><p
+                            class="fw-bold">Oral History</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:training_en' %}"><p
+                            class="fw-bold">Training</p></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app_en:contact_us_en' %}"><p
+                            class="fw-bold">Contact Us</p></a></button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="navbar-btn btn"><a class="nav-link" href="{% url 'app:index' %}"><p
+                            class="fw-bold">العربية</p></a></button>
                 </li>
 
             </ul>
@@ -86,7 +96,7 @@
 
 
 <div class="container"
-     style="margin-top: 1px;text-align: right;direction:rtl">
+     style="margin-top: 1px;text-align: left;direction:ltr">
 
     {% block body_block %}
 
@@ -95,30 +105,30 @@
 <!-- Footer-->
 <footer class="bg-light text-center text-white">
     <!-- Grid container -->
-<!--    <div class="container p-4 pb-0">-->
-<!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
-<!--        <section class="mb-4">-->
-<!--            &lt;!&ndash; Facebook &ndash;&gt;-->
-<!--            <a-->
-<!--                    class="btn btn-primary btn-floating m-1"-->
-<!--                    style="background-color: #3b5998;"-->
-<!--                    href="#"-->
-<!--                    role="button"-->
-<!--            ><i class="fab fa-facebook-f"></i-->
-<!--            ></a>-->
+    <!--    <div class="container p-4 pb-0">-->
+    <!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
+    <!--        <section class="mb-4">-->
+    <!--            &lt;!&ndash; Facebook &ndash;&gt;-->
+    <!--            <a-->
+    <!--                    class="btn btn-primary btn-floating m-1"-->
+    <!--                    style="background-color: #3b5998;"-->
+    <!--                    href="#"-->
+    <!--                    role="button"-->
+    <!--            ><i class="fab fa-facebook-f"></i-->
+    <!--            ></a>-->
 
 
-<!--            &lt;!&ndash; Instagram &ndash;&gt;-->
-<!--            <a-->
-<!--                    class="btn btn-primary btn-floating m-1"-->
-<!--                    style="background-color: #ac2bac;"-->
-<!--                    href="#"-->
-<!--                    role="button"-->
-<!--            ><i class="fab fa-instagram"></i-->
-<!--            ></a>-->
-<!--        </section>-->
-<!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
-<!--    </div>-->
+    <!--            &lt;!&ndash; Instagram &ndash;&gt;-->
+    <!--            <a-->
+    <!--                    class="btn btn-primary btn-floating m-1"-->
+    <!--                    style="background-color: #ac2bac;"-->
+    <!--                    href="#"-->
+    <!--                    role="button"-->
+    <!--            ><i class="fab fa-instagram"></i-->
+    <!--            ></a>-->
+    <!--        </section>-->
+    <!--        &lt;!&ndash; Section: Social media &ndash;&gt;-->
+    <!--    </div>-->
     <!-- Grid container -->
 
     <!-- Copyright -->
@@ -140,7 +150,6 @@
     .navbar-toggler-icon {
         background-color: white;
     }
-
 
 
 </style>

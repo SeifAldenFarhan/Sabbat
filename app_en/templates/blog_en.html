@@ -1,0 +1,19 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+
+
+<section class="clean-block clean-post dark">
+    <div class="container">
+        <div class="block-content">
+            <div class="post-image"
+                 style="background-image:url(&quot;{{ blog.image.url }}&quot;);"></div>
+            <div class="post-body"><h3>{{ blog.title }}</h3>
+                <figure class="figure"></figure>
+                <p>{{ blog.desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

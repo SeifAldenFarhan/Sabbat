@@ -1,0 +1,87 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+
+    <section class="clean-block clean-pricing dark">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info"
+                                           style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">Museum
+                shop</h2>
+{#                <p>شرح مبسط</p>#}
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" style="
+    margin-top: 15px;
+    margin-bottom: 15px;
+">
+            <div class="col">
+
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/3f/a3/07/3fa30703fac5d4ad38c6b660ddd5039f.jpg"
+                         class="card-img-top" alt="..." width="300" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Embroideries</h5>
+{#                        <p class="card-text">شرح مقصر</p>#}
+                        <a href="{% url 'app_en:market_type_en' 'Embroidery' %}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://www.pngplay.com/wp-content/uploads/7/Herb-PNG-HD-Quality.png" class="card-img-top"
+                         alt="..." width="300" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Herb</h5>
+{#                        <p class="card-text">شرح مقصر</p>#}
+                        <a href="{% url 'app_en:market_type_en' 'Herb' %}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_holy_olive_tree.jpg/220px-The_holy_olive_tree.jpg"
+                         class="card-img-top" alt="..." width="300" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Olive Tree</h5>
+{#                        <p class="card-text">شرح مقصر</p>#}
+                        <a href="{% url 'app_en:market_type_en' 'Olive' %}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://freepngimg.com/thumb/book/4-books-png-image-thumb.png" class="card-img-top"
+                         alt="..." width="300" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Books</h5>
+{#                        <p class="card-text">شرح مقصر</p>#}
+                        <a href="{% url 'app_en:market_type_en' 'Book' %}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://2.bp.blogspot.com/-mkUh4A749Bw/XLn3YcO4R4I/AAAAAAAAAB4/SaCJ0HKF-tA4P4rxzAPxStWFm1uhSxR3wCEwYBhgL/s1600/%25D9%25A2%25D9%25A0%25D9%25A1%25D9%25A9%25D9%25A0%25D9%25A4%25D9%25A1%25D9%25A9_%25D9%25A1%25D9%25A8%25D9%25A5%25D9%25A9%25D9%25A4%25D9%25A2.png"
+                         class="card-img-top" alt="..." width="300" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Accessories</h5>
+{#                        <p class="card-text">شرح مقصر</p>#}
+                        <a href="{% url 'app_en:market_type_en' 'Accessories' %}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+
+        .block-heading > p {
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
+
+
+    </style>
+{% endblock %}

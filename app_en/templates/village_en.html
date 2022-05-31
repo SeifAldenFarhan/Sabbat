@@ -1,0 +1,216 @@
+{% extends 'base_en.html' %}
+{#{% load static %}#}
+{% block body_block %}
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <main class="page service-page">
+        <section class="clean-block clean-services dark">
+            <div class="container">
+                <div class="block-heading"><h2 class="text-info">{{ village.name }}</h2>
+                    <div class="btn-group" role="group"><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="panoramic">صور بانورامية
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Aerial">صور جوية
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Actions">صور احداث
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Events">صور مناسبات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Institution">صور مؤسسات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 116.234px;margin: 3px;" id="Characters">صور شخصيات
+                        </button><!-- End: Basic Modal Button --><!-- Start: Basic Modal Button -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal1"
+                                style="width: 115.234px;margin: 3px;" id="Miscellaneous">متفرقات
+                        </button><!-- End: Basic Modal Button --></div>
+                </div>
+
+                <div class="row" id="PanoramicPhotoVillage" style="display: none">
+                    {% for p in village.PanoramicPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="AerialPhotoVillage" style="display: none">
+                    {% for p in village.AerialPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="ActionsPhotoVillage" style="display: none">
+                    {% for p in village.ActionsPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="EventsPhotoVillage" style="display: none">
+                    {% for p in village.EventsPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="InstitutionPhotoVillage" style="display: none">
+                    {% for p in village.InstitutionPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+                <div class="row" id="CharactersPhotoVillage" style="display: none">
+                    {% for p in village.CharactersPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+
+                <div class="row" id="MiscellaneousPhotoVillage" style="display: none">
+                    {% for p in village.MiscellaneousPhotoVillage.all %}
+                        <div class="col-md-6 col-lg-4 item">
+                            <a class="lightbox" href="{{ p.picture.url }}">
+                                <img class="img-thumbnail img-fluid image" src="{{ p.picture.url }}" alt="" style="height: 300px;
+                             width: 100%;">
+                                <p style="
+                            text-align: center;
+                            ">{{ p.caption }}</p>
+                            </a>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+
+            </div><!-- Start: --mp-- Multiple items slider responsive -->
+
+        </section>
+    </main><!-- Start: Footer Dark -->
+
+    <script>
+
+        $("#panoramic").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'flex';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+
+        $("#Aerial").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'flex';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+        $("#Actions").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'flex';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+        $("#Events").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'flex';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+
+        $("#Institution").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'flex';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+        $("#Characters").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'flex';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'none';
+        });
+        $("#Miscellaneous").live("click", function () {
+            document.getElementById('PanoramicPhotoVillage').style.display = 'none';
+            document.getElementById('AerialPhotoVillage').style.display = 'none';
+            document.getElementById('ActionsPhotoVillage').style.display = 'none';
+            document.getElementById('EventsPhotoVillage').style.display = 'none';
+            document.getElementById('InstitutionPhotoVillage').style.display = 'none';
+            document.getElementById('CharactersPhotoVillage').style.display = 'none';
+            document.getElementById('MiscellaneousPhotoVillage').style.display = 'flex';
+        });
+
+
+    </script>
+{% endblock %}

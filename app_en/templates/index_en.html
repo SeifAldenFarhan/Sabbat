@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_en.html' %}
 {% load static %}
 
 {% block body_block %}
@@ -9,9 +9,9 @@
                 style=" min-height: 300px ; background-color: black;"
                 class="clean-block clean-hero"
         >
-            <div class="text"><h2 style="font-family: 'Shilia W23';">لاجئون فلسطينيون</h2>
-                <p style="font-family: 'Shilia W23';">هل انت مهجر ؟</p><a class="btn btn-outline-light btn-lg ar-text-font" role="button" href="/contactus"
-                                       data-bs-target="/contactus" style="font-family: 'Shilia W23';">شاركنا تجربتك ومعلوماتك</a></div>
+            <div class="text"><h2 style="font-family: 'Shilia W23';">Palestinian Refugees</h2>
+                <p style="font-family: 'Shilia W23';">Are you displaced?</p><a class="btn btn-outline-light btn-lg ar-text-font" role="button" href="/contactus"
+                                       data-bs-target="/contactus" style="font-family: 'Shilia W23';">Share your experience with us</a></div>
         </section>
     </div>
 {#    <div class="col-md-5">#}
@@ -34,9 +34,9 @@
                             <img class="img-fluid figure-img"
                                  src="{{ 'media/images/cities/theimageback.jpeg' }}" alt="alt text here"
                                  style="opacity: 0.9">
-                            <figcaption class="figure-caption"><h3 ><strong>{{ c.name }}</strong></h3>
+                            <figcaption class="figure-caption"><h3 ><strong>{{ c.name_en }}</strong></h3>
                             </figcaption>
-                            <a href="{% url 'app:city' c.name %}" class="stretched-link"></a>
+                            <a href="{% url 'app_en:city_en' c.name_en %}" class="stretched-link"></a>
                         </figure>
                     </div>
                 </div>

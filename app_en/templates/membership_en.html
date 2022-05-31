@@ -1,0 +1,45 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+<section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="block-heading"><h2 class="text-info" style="color: #0dcaf0!important;margin-top: 20px;margin-bottom: 50px;">Membership</h2></div><!-- Start: Multi step form -->
+        <section></section><!-- End: Multi step form --></div><!-- Start: Multi step form -->
+    <section></section><!-- End: Multi step form --><!-- Start: Bootstrap Form With Validation -->
+    <form style="background-color: black;" class="bootstrap-form-with-validation"><h2 class="text-center"></h2>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">First name</label><input
+                class="form-control" type="text" id="text-input" name="text-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">Last name</label><input
+                class="form-control" type="text" id="text-input-4" name="text-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="password-input">Password</label><input
+                class="form-control" type="password" id="password-input" name="password-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="email-input">Email</label><input
+                class="form-control" type="email" id="email-input" name="email-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">City</label><input
+                class="form-control" type="text" id="text-input-3" name="text-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">Country</label><input
+                class="form-control" type="text" id="text-input-2" name="text-input"></div>
+        <div class="form-group mb-3"><label class="form-label" for="text-input">Phone</label><input
+                class="form-control" type="text" id="text-input-1" name="text-input"></div>
+        <div class="form-group mb-3">
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input"
+                                           id="formCheck-1"><label class="form-check-label" for="formCheck-1">Are we allowed to message you?</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input"
+                                           id="formCheck-5"><label class="form-check-label" for="formCheck-5">Are you Palestinian?
+                ؟</label></div>
+        </div>
+        <div class="form-group mb-3"><input class="form-control-plaintext" type="text"></div>
+        <div class="form-group mb-3">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+    </form><!-- End: Bootstrap Form With Validation --></section>
+<style>
+    .form-label {
+    color : white ;
+    }
+        .form-check-label {
+    color : white ;
+    }
+</style>
+
+{% endblock %}

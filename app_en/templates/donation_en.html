@@ -1,0 +1,67 @@
+{% extends 'base_en.html' %}
+
+{% block body_block %}
+    <!--<h2>الصفحة التبرع</h2>-->
+    <!--<p>-->
+    <!--    شكرا لسخائكم-->
+    <!--</p>-->
+    <section class="clean-block features">
+        <div class="container">
+            <div class="block-heading"><h2 class="text-info" style="margin-bottom: 50px;margin-top: 20px;">Donation</h2>
+                <p style="margin-bottom: 60px;">
+                    {{ donation_info.text }}
+                </p>
+            </div>
+            <div class="row justify-content-center"
+                 style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: ltr; background-color: #5e98cb85;">
+                <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>PayPal / credit
+                    card</strong></h4>
+                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: ltr;"></p>
+                    <form method="post">
+                        <div class="text-end mb-3">
+                            {% csrf_token %}
+                            <label class="form-label" for="id_amount">Amount</label>
+                            <input class="form-control" id="id_amount" name="amount" required>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary">Donate</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="col-md-5 feature-box"><i class="icon-bulb icon"></i><h4><strong>Bank Transfer</strong></h4>
+                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: ltr;">
+                        <br>
+                        <pp dir="ltr">{{ donation_info.bank_info }}</pp>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<style>
+
+    .feature-box > p {
+    font-family: 'Shilia W23';
+     font-size: 1.1em;
+     font-weight: 15;
+     line-height: 1.1em;
+    color: black;
+    }
+
+        .block-heading > p {
+    font-family: 'Shilia W23';
+     font-size: 1.1em;
+     font-weight: 15;
+     line-height: 1.1em;
+    color: black;
+    }
+
+
+
+</style>
+
+{% endblock %}
