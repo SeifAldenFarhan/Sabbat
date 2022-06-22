@@ -14,24 +14,25 @@ from app.models import AboutUs, Donation, City, Gallery, Training, DonationInfo,
 
 def index(request):
     cities = City.objects.all()
-    return render(request, 'index.html', {"cities": cities})
+    return render(request, 'index.html', {"cities": cities, 'current_path': 'en' + request.get_full_path()})
 
 
 def about_us(request):
     about_us = AboutUs.objects.get(id=1)
-    return render(request, 'about_us.html', {'text': about_us.text})
+    return render(request, 'about_us.html',
+                  {'text': about_us.text, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def visiting_times(request):
-    return render(request, 'visiting_times.html')
+    return render(request, 'visiting_times.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def membership(request):
-    return render(request, 'membership.html')
+    return render(request, 'membership.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def market(request):
-    return render(request, 'market.html')
+    return render(request, 'market.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def market_type(request, type):
@@ -41,21 +42,21 @@ def market_type(request, type):
         objects = Model.objects.all()
         print(objects)
         return render(request, 'market_type.html', {'title': type, 'objects': objects})
-    return render(request, 'market.html')
+    return render(request, 'market.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def gallery(request):
     objs = Gallery.objects.all()
-    return render(request, 'gallery.html', {'gallery': objs})
+    return render(request, 'gallery.html', {'gallery': objs, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def oral_history(request):
-    return render(request, 'oral_history.html')
+    return render(request, 'oral_history.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def training(request):
     objs = Training.objects.all()
-    return render(request, 'training.html', {'training': objs})
+    return render(request, 'training.html', {'training': objs, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def contact_us(request):
@@ -65,28 +66,30 @@ def contact_us(request):
             form.save()
             return render(request, 'success.html')
     form = ContactForm()
-    context = {'form': form}
+    context = {'form': form, 'current_path': 'en' + str(request.get_full_path())}
     return render(request, 'contact_us.html', context)
 
 
 def city(request, city):
-    city = City.objects.get(name=city)
-    return render(request, 'city.html', {'city': city})
+    city = City.objects.get(name_en=city)
+    print(request.get_full_path())
+    return render(request, 'city.html', {'city': city, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def village(request, city, village):
-    village = Village.objects.get(city__name=city, name=village)
-    return render(request, 'village.html', {'village': village})
+    village = Village.objects.get(city__name_en=city, name_en=village)
+    new_url = 'en' + request.get_full_path()
+    return render(request, 'village.html', {'village': village, 'current_path': new_url})
 
 
 def gallery_blog(request, id):
     blog = Gallery.objects.get(id=id)
-    return render(request, 'blog.html', {'blog': blog})
+    return render(request, 'blog.html', {'blog': blog, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def training_blog(request, id):
     blog = Training.objects.get(id=id)
-    return render(request, 'blog.html', {'blog': blog})
+    return render(request, 'blog.html', {'blog': blog, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def donation(request):
@@ -102,22 +105,23 @@ def donation(request):
             return HttpResponseRedirect(reverse(f'app:process_payment', args=[amount, d_id]))
 
             # process_payment(request, amount, d_id)
-    return render(request, 'donation.html', {'donation_info': donation_info, "DonationForm": DonationForm})
+    return render(request, 'donation.html', {'donation_info': donation_info, "DonationForm": DonationForm,
+                                             'current_path': 'en' + str(request.get_full_path())})
 
 
 @csrf_exempt
 def payment_done(request):
-    return render(request, 'payment_done.html')
+    return render(request, 'payment_done.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 @csrf_exempt
 def payment_canceled(request):
-    return render(request, 'payment_cancelled.html')
+    return render(request, 'payment_cancelled.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def checkout(request):
     if request.method == 'POST':
-        return redirect('process_payment')
+        return redirect('process_payment', {'current_path': 'en' + str(request.get_full_path())})
 
 
 def process_payment(request, amount, d_id):
@@ -133,9 +137,9 @@ def process_payment(request, amount, d_id):
         'cancel_return': 'http://{}{}'.format(host, reverse('app:payment_cancelled')),
     }
     form = PayPalPaymentsForm(initial=paypal_dict)
-    return render(request, 'process_payment.html', {'form': form})
+    return render(request, 'process_payment.html', {'form': form, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def museum(request):
     objs = MuseumPhoto.objects.all()
-    return render(request, 'museum.html', {'photos': objs})
+    return render(request, 'museum.html', {'photos': objs, 'current_path': 'en' + str(request.get_full_path())})

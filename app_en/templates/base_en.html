@@ -88,9 +88,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app:index' %}">
-                        <p class="fw-bold">العربية
-                        </p>
+                    <a class="nav-link" href="{{ request.path|slice:'3:' }}">
+                        <p class="fw-bold">العربية</p>
                     </a>
                 </li>
 
@@ -172,4 +171,7 @@
 
 </style>
 
+<script>
+    let p_url = "enen"
+</script>
 </html>
