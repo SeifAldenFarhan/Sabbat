@@ -7,8 +7,8 @@ from Sabat import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('app.urls', 'app'), namespace='app')),
     path('en/', include(('app_en.urls', 'app_en'), namespace='app_en')),
+    path('', include(('app.urls', 'app'), namespace='app')),
     path('paypal/', include('paypal.standard.ipn.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()

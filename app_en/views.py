@@ -80,7 +80,7 @@ def city(request, city):
 
 
 def village(request, city, village):
-    village = Village.objects.get(city__name=city, name=village)
+    village = Village.objects.get(city__name_en=city, name_en=village)
     return render(request, 'village_en.html', {'village': village})
 
 

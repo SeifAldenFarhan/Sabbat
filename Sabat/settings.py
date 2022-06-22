@@ -148,3 +148,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 PAYPAL_RECEIVER_EMAIL = 'seifaldenfarhan@gmail.com'
 
 PAYPAL_TEST = True
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+)

@@ -77,6 +77,7 @@ class MiscellaneousPhotoCity(models.Model):
 
 class Village(models.Model):
     name = models.CharField(max_length=255, verbose_name='الأسم')
+    name_en = models.CharField(max_length=255, verbose_name='الأسم انجليزي')
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='city', verbose_name='المدينة')
     des = models.TextField()
 
