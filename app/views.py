@@ -32,6 +32,7 @@ def membership(request):
 
 
 def market(request):
+    print('en' + str(request.get_full_path()))
     return render(request, 'market.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
@@ -41,7 +42,9 @@ def market_type(request, type):
         Model = apps.get_model('app', type)
         objects = Model.objects.all()
         print(objects)
-        return render(request, 'market_type.html', {'title': type, 'objects': objects})
+        return render(request, 'market_type.html',
+                      {'title': type, 'objects': objects, 'current_path': 'en' + str(request.get_full_path())})
+    print('en' + str(request.get_full_path()))
     return render(request, 'market.html', {'current_path': 'en' + str(request.get_full_path())})
 
 
