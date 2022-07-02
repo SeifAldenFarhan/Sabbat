@@ -19,8 +19,9 @@ def index(request):
 
 def about_us(request):
     about_us = AboutUs.objects.get(id=1)
+    text = about_us.text.split('\n')
     return render(request, 'about_us.html',
-                  {'text': about_us.text, 'current_path': 'en' + str(request.get_full_path())})
+                  {'text': text, 'current_path': 'en' + str(request.get_full_path())})
 
 
 def visiting_times(request):
