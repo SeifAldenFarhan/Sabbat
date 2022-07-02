@@ -24,7 +24,8 @@ def index(request):
 
 def about_us(request):
     about_us = AboutUs.objects.get(id=1)
-    return render(request, 'about_us_en.html', {'text': about_us.text})
+    text = about_us.text_en.split('\n')
+    return render(request, 'about_us_en.html', {'text': text})
 
 
 def visiting_times(request):
