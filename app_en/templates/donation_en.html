@@ -16,17 +16,10 @@
                  style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: ltr; background-color: #5e98cb85;">
                 <div class="col-md-5 feature-box"><i class="icon-paypal icon"></i><h4><strong>PayPal / credit
                     card</strong></h4>
-                    <p style="margin: 0 0 10px;unicode-bidi: bidi-override;direction: ltr;"></p>
-                    <form method="post">
-                        <div class="text mb-3">
-                            {% csrf_token %}
-                            <label class="form-label" for="id_amount">Amount</label>
-                            <input class="form-control" id="id_amount" name="amount" required>
-                        </div>
-                        <div class="text mb-3">
-                            <button class="btn btn-primary">Donate</button>
-                        </div>
-                    </form>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=E2C7HDU9BKKQG">
+                        <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-medium.png"
+                             alt="Buy now with PayPal"/>
+                    </a>
 
 
                 </div>
@@ -42,26 +35,25 @@
         </div>
     </section>
 
-<style>
+    <style>
 
-    .feature-box > p {
-    font-family: 'Shilia W23';
-     font-size: 1.1em;
-     font-weight: 15;
-     line-height: 1.1em;
-    color: black;
-    }
+        .feature-box > p {
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
 
         .block-heading > p {
-    font-family: 'Shilia W23';
-     font-size: 1.1em;
-     font-weight: 15;
-     line-height: 1.1em;
-    color: black;
-    }
+            font-family: 'Shilia W23';
+            font-size: 1.1em;
+            font-weight: 15;
+            line-height: 1.1em;
+            color: black;
+        }
 
 
-
-</style>
+    </style>
 
 {% endblock %}

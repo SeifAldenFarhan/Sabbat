@@ -1,6 +1,7 @@
 from django.apps import apps
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.template import RequestContext
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from paypal.standard.forms import PayPalPaymentsForm
@@ -147,3 +148,17 @@ def process_payment(request, amount, d_id):
 def museum(request):
     objs = MuseumPhoto.objects.all()
     return render(request, 'museum.html', {'photos': objs, 'current_path': 'en' + str(request.get_full_path())})
+
+
+def handler404(request, template_name="404.html"):
+    response = render(request, template_name)
+    response.status_code = 404
+    return response
+
+
+def handler500(request, template_name="500.html"):
+    response = render(request, template_name)
+    response.status_code = 500
+    return response
+
+
